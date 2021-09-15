@@ -38,7 +38,7 @@ namespace FtQuotes
                 if (result.Dates == null) break;
 
                 var adds = Zip(
-                    result.Dates.Select(date => DateTime.SpecifyKind(date, DateTimeKind.Utc).AddMinutes(prices.UtcOffsetMinutes)).ToList(),
+                    result.Dates,
                     prices.ComponentSeries.Single(p => p.Type == "Open").Values,
                     prices.ComponentSeries.Single(p => p.Type == "High").Values,
                     prices.ComponentSeries.Single(p => p.Type == "Low").Values,
